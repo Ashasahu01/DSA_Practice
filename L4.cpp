@@ -1,7 +1,6 @@
-//Count and Sum  
-
 #include <stdio.h>
 #include <stdlib.h>
+#include <climits>
 using namespace std;
 
 struct Node
@@ -30,53 +29,27 @@ void create(int A[], int n)
     }
 }
 
-// Iterative function
-int count(struct Node *p){
-    int c = 0;
-    while(p != 0){
-        c++;
-        p = p->next;
-    }
-return c;
-}
-
-// Recursive function
-int Rcount(struct Node *p){
-    if(p == 0)
-        return 0;
-    else
-        return Rcount(p->next)+1;
-}
-
-//Addition (Iterative function)
-int Add(struct Node *p){
-    int sum = 0;
+//itereative version
+int Max(struct Node *p){
+    int max= INT_MIN;
     while(p){
-        sum = sum + p->data;
+        if(p->data > max)
+            max = p->data;
         p = p->next;
     }
-return sum;
+    return max;
 }
 
-// //Addition (Recursive function)
-int RAdd(struct Node *p){
-    if(p != 0){
-        return RAdd(p->next) + p->data;
-    }
-    else{
-        return 0;
-    }
+//Recursive version
+int RMax(){
+    
 }
-
 int main()
 {
-    int A[] = {3, 5, 7, 10, 15,8,12,20};
+    int A[] = {3, 5, 7, 10, 15,78,98,54,234};
 
-    create(A, 8); // linkedList is created
-
-    printf("Sum is %d\n\n",Add(first));
-    printf("Sum is %d\n\n",RAdd(first));
-    // RAdd(first);
+    create(A, 9); // linkedList is created
+    printf("Max is %d\n", Max(first));
 
     return 0;
 }
