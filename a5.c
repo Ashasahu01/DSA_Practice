@@ -1,7 +1,7 @@
 
 #include<stdio.h>
 
-int insertPos(int Arr[], int n, int x){
+int insertPos(int Arr[], int n, int x){ 
         int low = 0, high = n -1, mid;
 
         while(low <= high){

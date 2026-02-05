@@ -1,7 +1,7 @@
-
+////Given a sorted array and a key x, find the number of occurrences of x using binary search (not linear scan).
 #include<stdio.h>
 
-int first_occ(int A[],int l,int r,int X){
+int first_occ(int A[],int l,int r,int X){  // find first occurence of key value
         int res = -1;
         while(l <= r){
 
@@ -21,7 +21,7 @@ int first_occ(int A[],int l,int r,int X){
                 return res;
         }
 
-int last_occ(int A[], int l, int r, int X){
+int last_occ(int A[], int l, int r, int X){  // find last occurence of key value
         int res = -1;
         while(l <= r){
 
@@ -47,7 +47,7 @@ int main(){
         scanf("%d", &n);
 
         int A[n];
-        printf("Enter sorted array of size %d ", n);
+        printf("Enter sorted array of size %d :\n", n);
         for(int i=0; i<n; i++){
                 scanf("%d", &A[i]);
         }
