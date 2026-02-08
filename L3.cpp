@@ -7,7 +7,7 @@ using namespace std;
 struct Node
 {
     int data;
-    struct Node *next; // self referential structure
+    struct Node *list; // self referential structure
 
 } *first = NULL; // empty linkedList
 
@@ -17,15 +17,15 @@ void create(int A[], int n)
     struct Node *t, *last;                              // last points to the last node help to add new elements at the end
     first = (struct Node *)malloc(sizeof(struct Node)); // here we create linked list using malloc function
     first->data = A[0];                                 // we assign first element of array
-    first->next = NULL;                                 // element next ti the first is empty now
+    first->list = NULL;                                 // element list ti the first is empty now
     last = first;
 
     for (i = 1; i < n; i++)
     {
         t = (struct Node *)malloc(sizeof(struct Node));
         t->data = A[i];
-        t->next = NULL;
-        last->next = t;
+        t->list = NULL;
+        last->list = t;
         last = t;
     }
 }
@@ -35,7 +35,7 @@ int count(struct Node *p){
     int c = 0;
     while(p != 0){
         c++;
-        p = p->next;
+        p = p->list;
     }
 return c;
 }
@@ -45,7 +45,7 @@ int Rcount(struct Node *p){
     if(p == 0)
         return 0;
     else
-        return Rcount(p->next)+1;
+        return Rcount(p->list)+1;
 }
 
 //Addition (Iterative function)
@@ -53,7 +53,7 @@ int Add(struct Node *p){
     int sum = 0;
     while(p){
         sum = sum + p->data;
-        p = p->next;
+        p = p->list;
     }
 return sum;
 }
@@ -61,7 +61,7 @@ return sum;
 // //Addition (Recursive function)
 int RAdd(struct Node *p){
     if(p != 0){
-        return RAdd(p->next) + p->data;
+        return RAdd(p->list) + p->data;
     }
     else{
         return 0;
