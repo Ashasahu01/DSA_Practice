@@ -1,4 +1,3 @@
-
 #include<stdio.h>
 
 int insertPos(int Arr[], int n, int x){ 
