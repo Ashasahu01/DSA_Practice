@@ -22,5 +22,4 @@ int main(){
     for(i=0;i<5;i++)
         printf("%d ",p[i]);  //accessing new elements using pointer    
     return 0;
-
 }

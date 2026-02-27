@@ -15,6 +15,7 @@ struct Sparse
     int num;
     struct Element *ele; // Pointer to array of elements for creating a dynamic array
 };
+
 void create(struct Sparse *s)
 {
     int i;
