@@ -1,8 +1,9 @@
+//Diagonal Matrix
 #include <stdio.h>
 
 struct Matrix
 {
-    int A[10];
+    int A[10];  // Array
     int n;
 };
 
@@ -19,7 +20,7 @@ int Get(struct Matrix m, int i, int j) // it returns the values
         return 0;
 }
 
-void Display(struct Matrix m)
+void Display(struct Matrix m)   // Display function
 {
     int i, j;
     for (i = 0; i < m.n; i++)
