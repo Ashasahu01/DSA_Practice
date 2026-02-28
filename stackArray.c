@@ -81,11 +81,13 @@ int main(){
     push(&st, 30);
     push(&st, 40);
 
-    push(&st, 50);
-    push(&st, 60);  //shows stack overflow if we give size less than 6
+    // push(&st, 50);
+    // push(&st, 60);  //shows stack overflow if we give size less than 6
 
-    printf("%d \n",pop(&st));
-    printf("%d \n",pop(&st));
+    // printf("%d \n",pop(&st));
+    // printf("%d \n",pop(&st));
+
+    printf("%d \n",peek(st,1));
 
     Display(st);
 
