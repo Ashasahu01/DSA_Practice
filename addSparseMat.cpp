@@ -70,7 +70,7 @@ Sparse Sparse::operator+(Sparse &s)
     return sum;
 }
 
-istream &operator>>(istream &is, Sparse &s)
+ostream &operator>>(istream &is, Sparse &s)
 {
     cout << "Enter non-zero elements";
     for (int i = 0; i < s.num; i++)
