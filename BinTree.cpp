@@ -1,5 +1,6 @@
 #include<iostream>
 #include<vector>
+#include<queue>
 using namespace std;
 
 class Node {
@@ -63,6 +64,41 @@ void postOrder(Node* root){
     cout << root->data << " ";
 }
 
+//Level Order
+
+void levelOrder(Node * root){
+    queue<Node*> q;
+
+    q.push(root);
+    q.push(NULL); //tells us end up of line
+
+    while(q.size() > 0) {
+        Node* curr = q.front();
+        q.pop();
+
+        if(curr == NULL) {
+            if(!q.empty()){
+                cout << endl;
+                q.push(NULL);  //help us to track null value.
+                continue;
+            }else {
+                break;
+            }
+        }
+
+        cout << curr->data << " ";
+
+        if(curr->left != NULL) {
+            q.push(curr->left);
+        }
+
+        if(curr->right != NULL){
+            q.push(curr->right);
+        }
+    }
+    cout << endl;
+}
+
 int main() {
     vector<int> preorder = {1, 2, -1, -1, 3, 4, -1, -1, 5, -1, -1};
 
@@ -86,7 +122,11 @@ int main() {
 
     //----call postOrder func :-
 
-    postOrder(root);  // => 2 4 5 3 1
-    cout << endl;
+    // postOrder(root);  // => 2 4 5 3 1
+    // cout << endl;
+
+    //-----LevelOrder func :-
+
+    levelOrder(root);// => 1 2 3 4 5
     return 0;
 }
